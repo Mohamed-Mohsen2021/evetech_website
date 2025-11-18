@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flaticon Webfont</title>
+    <link rel="stylesheet" type="text/css" href="flaticon_willbuild.css"/>
+    <meta charset="UTF-8">
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body {
+            font-family: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #777777;
+        }
+
+        a {
+            color: #52D999;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        [class^="pbmit-willbuild-icon-"]:before, [class*=" pbmit-willbuild-icon-"]:before, [class^="pbmit-willbuild-icon-"]:after, [class*=" pbmit-willbuild-icon-"]:after {
+            font-family: flaticon_willbuild;
+            font-size: 32px;
+            line-height: 1.25;
+            font-style: normal;
+            margin-left: 20px;
+            color: #424242;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            margin: auto;
+            padding: 0 1em;
+        }
+
+        .title {
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px;
+        }
+
+        header .logo {
+            height: auto;
+            border: none;
+            display: inline-block;
+        }
+
+        header strong {
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+
+        .demo {
+            margin: 2em auto;
+            line-height: 1.25;
+        }
+
+        .demo ul li {
+            margin-bottom: 12px;
+        }
+
+        .demo ul li code {
+            background-color: #121212;
+            border-radius: 3px;
+            padding: 12px;
+            display: inline-block;
+            color: #fff;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+            font-weight: lighter;
+            margin-top: 12px;
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .demo ul li code .red {
+            color: #EB644C;
+        }
+
+        .demo ul li code .green {
+            color: #52D999;
+        }
+
+        .demo ul li code .yellow {
+            color: #FFF4D9;
+        }
+
+        .demo ul li code .blue {
+            color: #648EEF;
+        }
+
+        .demo ul li code .purple {
+            color: #6569BD;
+        }
+
+        .demo ul li code .dots {
+            margin-top: 0.5em;
+            display: block;
+        }
+
+        #glyphs {
+            border-bottom: 1px solid #E5E5E5;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .glyph {
+            display: inline-block;
+            width: 9em;
+            margin: 1em;
+            text-align: center;
+            vertical-align: top;
+            background: #FFF;
+        }
+
+        .glyph .flaticon {
+            padding: 10px;
+            display: block;
+            font-family: "Flaticon";
+            font-size: 64px;
+            line-height: 1;
+        }
+
+        .glyph .flaticon:before {
+            font-size: 64px;
+            color: #777777;
+            margin-left: 0;
+        }
+
+        .class-name {
+            font-size: 0.65em;
+            background-color: #E5E5E5;
+            color: #9C9C9C;
+            border-radius: 4px 4px 0 0;
+            padding: 0.5em;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+
+        .author-name {
+            font-size: 0.6em;
+            background-color: #EFF3F6;
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+            padding: 0.5em;
+        }
+
+        .author-name a {
+            color: #121212;
+        }
+
+        .class-name:last-child {
+            font-size: 10px;
+            line-height: 1.75;
+            color: #888;
+        }
+
+        .class-name:last-child a {
+            font-size: 10px;
+            line-height: 1.75;
+            color: #555;
+        }
+
+        .glyph > input {
+            display: block;
+            width: 100px;
+            margin: 5px auto;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.75;
+            cursor: text;
+        }
+
+        .glyph > input.icon-input {
+            font-family: "Flaticon";
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .attribution .title {
+            margin-top: 2em;
+        }
+
+        .attribution textarea {
+            background-color: #F8FAFB;
+            color: #121212;
+            padding: 1em;
+            border: none;
+            box-shadow: none;
+            border: 1px solid #E5E5E5;
+            border-radius: 4px;
+            resize: none;
+            width: 100%;
+            height: 150px;
+            font-size: 13px;
+            line-height: 1.6;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+            -webkit-appearance: none;
+        }
+
+        .attribution textarea:hover {
+            border-color: #CFD9E0;
+        }
+
+        .attribution textarea:focus {
+            border-color: #52D999;
+        }
+
+        .iconsuse {
+            margin: 2em auto;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .iconsuse:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .iconsuse .image {
+            float: left;
+            width: 25%;
+            padding: 0 1em;
+        }
+
+        .iconsuse .image p {
+            margin-bottom: 1em;
+        }
+
+        .iconsuse .image span {
+            display: block;
+            font-size: 0.65em;
+            background-color: #222;
+            color: #fff;
+            border-radius: 4px;
+            padding: 10px;
+            color: #FFFF99;
+            margin-top: 1em;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+
+        .flaticon:before {
+            color: #777777;
+        }
+
+        #footer {
+            text-align: center;
+            background-color: #121212;
+            color: #9C9C9C;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        #footer a {
+            font-weight: normal;
+        }
+
+        @media (max-width: 960px) {
+            .iconsuse .image {
+                width: 50%;
+            }
+        }
+
+        .preview {
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .preview .inner {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #F7F7F7;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .preview .inner  {
+            line-height: 85px;
+            font-size: 40px;
+            color: #424242;
+        }
+
+        .label {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            font-size: 10px;
+            font-family: Monaco, monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: #ddd;
+            -webkit-border-radius: 0 0 3px 3px;
+            -moz-border-radius: 0 0 3px 3px;
+            border-radius: 0 0 3px 3px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <section class="demo wrapper">
+
+        <p class="title">Webfont Instructions</p>
+
+        <ul>
+            <li>
+                <span class="num">1. </span>Copy the "Fonts" files and CSS files to your website CSS folder.
+            </li>
+            <li>
+                <span class="num">2. </span>Add the CSS link to your website source code on header.
+                <code class="big">
+                    &lt;<span class="red">head</span>&gt;
+                    <br/><span class="dots">...</span>
+                    <br/>&lt;<span class="red">link</span> <span class="green">rel</span>=<span
+                        class="yellow">"stylesheet"</span> <span class="green">type</span>=<span
+                        class="yellow">"text/css"</span> <span class="green">href</span>=<span class="yellow">"your_website_domain/css_root/flaticon_willbuild.css"</span>&gt;
+                    <br/><span class="dots">...</span>
+                    <br/>&lt;/<span class="red">head</span>&gt;
+                </code>
+            </li>
+
+            <li>
+                <p>
+                    <span class="num">3. </span>Use the icon class on <code>"<span class="blue">display</span>:<span
+                        class="purple"> inline</span>"</code> elements:
+                    <br/>
+                    Use example: <code>&lt;<span class="red">i</span> <span class="green">class</span>=<span class="yellow">&quot;pbmit-willbuild-icon-airplane49&quot;</span>&gt;&lt;/<span
+                        class="red">i</span>&gt;</code> or <code>&lt;<span class="red">span</span> <span
+                        class="green">class</span>=<span class="yellow">&quot;pbmit-willbuild-icon-airplane49&quot;</span>&gt;&lt;/<span
+                        class="red">span</span>&gt;</code>
+            </li>
+        </ul>
+
+    </section>
+    <section id="glyphs">
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-plus"></i>
+                <div class="class-name">.pbmit-willbuild-icon-plus</div>
+                <div class="author-name">Author: #author-link-flaticon-plus# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-tick"></i>
+                <div class="class-name">.pbmit-willbuild-icon-tick</div>
+                <div class="author-name">Author: #author-link-flaticon-tick# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-compass-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-compass-1</div>
+                <div class="author-name">Author: #author-link-flaticon-compass-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-drawing-tool"></i>
+                <div class="class-name">.pbmit-willbuild-icon-drawing-tool</div>
+                <div class="author-name">Author: #author-link-flaticon-drawing-tool# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-rulers"></i>
+                <div class="class-name">.pbmit-willbuild-icon-rulers</div>
+                <div class="author-name">Author: #author-link-flaticon-rulers# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-pdf-file-format-symbol"></i>
+                <div class="class-name">.pbmit-willbuild-icon-pdf-file-format-symbol</div>
+                <div class="author-name">Author: #author-link-flaticon-pdf-file-format-symbol# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-download"></i>
+                <div class="class-name">.pbmit-willbuild-icon-download</div>
+                <div class="author-name">Author: #author-link-flaticon-download# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-quote"></i>
+                <div class="class-name">.pbmit-willbuild-icon-quote</div>
+                <div class="author-name">Author: #author-link-flaticon-quote# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-arrow-right"></i>
+                <div class="class-name">.pbmit-willbuild-icon-arrow-right</div>
+                <div class="author-name">Author: #author-link-flaticon-arrow-right# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-wallet-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-wallet-1</div>
+                <div class="author-name">Author: #author-link-flaticon-wallet-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-wallet"></i>
+                <div class="class-name">.pbmit-willbuild-icon-wallet</div>
+                <div class="author-name">Author: #author-link-flaticon-wallet# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-clock"></i>
+                <div class="class-name">.pbmit-willbuild-icon-clock</div>
+                <div class="author-name">Author: #author-link-flaticon-clock# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-calendar"></i>
+                <div class="class-name">.pbmit-willbuild-icon-calendar</div>
+                <div class="author-name">Author: #author-link-flaticon-calendar# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-star-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-star-1</div>
+                <div class="author-name">Author: #author-link-flaticon-star-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-star"></i>
+                <div class="class-name">.pbmit-willbuild-icon-star</div>
+                <div class="author-name">Author: #author-link-flaticon-star# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-up-right-arrow"></i>
+                <div class="class-name">.pbmit-willbuild-icon-up-right-arrow</div>
+                <div class="author-name">Author: #author-link-flaticon-up-right-arrow# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-apartment"></i>
+                <div class="class-name">.pbmit-willbuild-icon-apartment</div>
+                <div class="author-name">Author: #author-link-flaticon-apartment# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-modern-house"></i>
+                <div class="class-name">.pbmit-willbuild-icon-modern-house</div>
+                <div class="author-name">Author: #author-link-flaticon-modern-house# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-office"></i>
+                <div class="class-name">.pbmit-willbuild-icon-office</div>
+                <div class="author-name">Author: #author-link-flaticon-office# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-factory"></i>
+                <div class="class-name">.pbmit-willbuild-icon-factory</div>
+                <div class="author-name">Author: #author-link-flaticon-factory# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-direct-mail"></i>
+                <div class="class-name">.pbmit-willbuild-icon-direct-mail</div>
+                <div class="author-name">Author: #author-link-flaticon-direct-mail# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-envelope"></i>
+                <div class="class-name">.pbmit-willbuild-icon-envelope</div>
+                <div class="author-name">Author: #author-link-flaticon-envelope# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-maps-and-flags"></i>
+                <div class="class-name">.pbmit-willbuild-icon-maps-and-flags</div>
+                <div class="author-name">Author: #author-link-flaticon-maps-and-flags# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-call"></i>
+                <div class="class-name">.pbmit-willbuild-icon-call</div>
+                <div class="author-name">Author: #author-link-flaticon-call# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-shopping-cart"></i>
+                <div class="class-name">.pbmit-willbuild-icon-shopping-cart</div>
+                <div class="author-name">Author: #author-link-flaticon-shopping-cart# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-loupe"></i>
+                <div class="class-name">.pbmit-willbuild-icon-loupe</div>
+                <div class="author-name">Author: #author-link-flaticon-loupe# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-buildings"></i>
+                <div class="class-name">.pbmit-willbuild-icon-buildings</div>
+                <div class="author-name">Author: #author-link-flaticon-buildings# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-design"></i>
+                <div class="class-name">.pbmit-willbuild-icon-design</div>
+                <div class="author-name">Author: #author-link-flaticon-design# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-tripod"></i>
+                <div class="class-name">.pbmit-willbuild-icon-tripod</div>
+                <div class="author-name">Author: #author-link-flaticon-tripod# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-mapping"></i>
+                <div class="class-name">.pbmit-willbuild-icon-mapping</div>
+                <div class="author-name">Author: #author-link-flaticon-mapping# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-quality"></i>
+                <div class="class-name">.pbmit-willbuild-icon-quality</div>
+                <div class="author-name">Author: #author-link-flaticon-quality# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-trophy"></i>
+                <div class="class-name">.pbmit-willbuild-icon-trophy</div>
+                <div class="author-name">Author: #author-link-flaticon-trophy# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-highway"></i>
+                <div class="class-name">.pbmit-willbuild-icon-highway</div>
+                <div class="author-name">Author: #author-link-flaticon-highway# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-helmet-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-helmet-1</div>
+                <div class="author-name">Author: #author-link-flaticon-helmet-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-construction-worker"></i>
+                <div class="class-name">.pbmit-willbuild-icon-construction-worker</div>
+                <div class="author-name">Author: #author-link-flaticon-construction-worker# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-road-roller"></i>
+                <div class="class-name">.pbmit-willbuild-icon-road-roller</div>
+                <div class="author-name">Author: #author-link-flaticon-road-roller# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-floor"></i>
+                <div class="class-name">.pbmit-willbuild-icon-floor</div>
+                <div class="author-name">Author: #author-link-flaticon-floor# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-excavator"></i>
+                <div class="class-name">.pbmit-willbuild-icon-excavator</div>
+                <div class="author-name">Author: #author-link-flaticon-excavator# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-architecture"></i>
+                <div class="class-name">.pbmit-willbuild-icon-architecture</div>
+                <div class="author-name">Author: #author-link-flaticon-architecture# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-brickwall"></i>
+                <div class="class-name">.pbmit-willbuild-icon-brickwall</div>
+                <div class="author-name">Author: #author-link-flaticon-brickwall# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-hook"></i>
+                <div class="class-name">.pbmit-willbuild-icon-hook</div>
+                <div class="author-name">Author: #author-link-flaticon-hook# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-construction-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-construction-1</div>
+                <div class="author-name">Author: #author-link-flaticon-construction-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-barrier-2"></i>
+                <div class="class-name">.pbmit-willbuild-icon-barrier-2</div>
+                <div class="author-name">Author: #author-link-flaticon-barrier-2# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-level-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-level-1</div>
+                <div class="author-name">Author: #author-link-flaticon-level-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-construction"></i>
+                <div class="class-name">.pbmit-willbuild-icon-construction</div>
+                <div class="author-name">Author: #author-link-flaticon-construction# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-wheelbarrow"></i>
+                <div class="class-name">.pbmit-willbuild-icon-wheelbarrow</div>
+                <div class="author-name">Author: #author-link-flaticon-wheelbarrow# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-level"></i>
+                <div class="class-name">.pbmit-willbuild-icon-level</div>
+                <div class="author-name">Author: #author-link-flaticon-level# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-measuring-tape"></i>
+                <div class="class-name">.pbmit-willbuild-icon-measuring-tape</div>
+                <div class="author-name">Author: #author-link-flaticon-measuring-tape# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-shovel"></i>
+                <div class="class-name">.pbmit-willbuild-icon-shovel</div>
+                <div class="author-name">Author: #author-link-flaticon-shovel# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-trowel"></i>
+                <div class="class-name">.pbmit-willbuild-icon-trowel</div>
+                <div class="author-name">Author: #author-link-flaticon-trowel# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-helmet"></i>
+                <div class="class-name">.pbmit-willbuild-icon-helmet</div>
+                <div class="author-name">Author: #author-link-flaticon-helmet# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-oil-pump"></i>
+                <div class="class-name">.pbmit-willbuild-icon-oil-pump</div>
+                <div class="author-name">Author: #author-link-flaticon-oil-pump# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-jackhammer"></i>
+                <div class="class-name">.pbmit-willbuild-icon-jackhammer</div>
+                <div class="author-name">Author: #author-link-flaticon-jackhammer# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-vest"></i>
+                <div class="class-name">.pbmit-willbuild-icon-vest</div>
+                <div class="author-name">Author: #author-link-flaticon-vest# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-driller"></i>
+                <div class="class-name">.pbmit-willbuild-icon-driller</div>
+                <div class="author-name">Author: #author-link-flaticon-driller# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-bulldozer"></i>
+                <div class="class-name">.pbmit-willbuild-icon-bulldozer</div>
+                <div class="author-name">Author: #author-link-flaticon-bulldozer# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-crane-2"></i>
+                <div class="class-name">.pbmit-willbuild-icon-crane-2</div>
+                <div class="author-name">Author: #author-link-flaticon-crane-2# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-crane-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-crane-1</div>
+                <div class="author-name">Author: #author-link-flaticon-crane-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-crane"></i>
+                <div class="class-name">.pbmit-willbuild-icon-crane</div>
+                <div class="author-name">Author: #author-link-flaticon-crane# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-dumper"></i>
+                <div class="class-name">.pbmit-willbuild-icon-dumper</div>
+                <div class="author-name">Author: #author-link-flaticon-dumper# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-maze"></i>
+                <div class="class-name">.pbmit-willbuild-icon-maze</div>
+                <div class="author-name">Author: #author-link-flaticon-maze# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-cone"></i>
+                <div class="class-name">.pbmit-willbuild-icon-cone</div>
+                <div class="author-name">Author: #author-link-flaticon-cone# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-caliper"></i>
+                <div class="class-name">.pbmit-willbuild-icon-caliper</div>
+                <div class="author-name">Author: #author-link-flaticon-caliper# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-compass"></i>
+                <div class="class-name">.pbmit-willbuild-icon-compass</div>
+                <div class="author-name">Author: #author-link-flaticon-compass# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-barrier-1"></i>
+                <div class="class-name">.pbmit-willbuild-icon-barrier-1</div>
+                <div class="author-name">Author: #author-link-flaticon-barrier-1# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-circular-saw"></i>
+                <div class="class-name">.pbmit-willbuild-icon-circular-saw</div>
+                <div class="author-name">Author: #author-link-flaticon-circular-saw# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-barrier"></i>
+                <div class="class-name">.pbmit-willbuild-icon-barrier</div>
+                <div class="author-name">Author: #author-link-flaticon-barrier# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-safety-glasses"></i>
+                <div class="class-name">.pbmit-willbuild-icon-safety-glasses</div>
+                <div class="author-name">Author: #author-link-flaticon-safety-glasses# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-hammer"></i>
+                <div class="class-name">.pbmit-willbuild-icon-hammer</div>
+                <div class="author-name">Author: #author-link-flaticon-hammer# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-material"></i>
+                <div class="class-name">.pbmit-willbuild-icon-material</div>
+                <div class="author-name">Author: #author-link-flaticon-material# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-wall"></i>
+                <div class="class-name">.pbmit-willbuild-icon-wall</div>
+                <div class="author-name">Author: #author-link-flaticon-wall# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-metre"></i>
+                <div class="class-name">.pbmit-willbuild-icon-metre</div>
+                <div class="author-name">Author: #author-link-flaticon-metre# </div>
+            </div>
+
+            <div class="glyph">
+                <i class="flaticon pbmit-willbuild-icon-tiles"></i>
+                <div class="class-name">.pbmit-willbuild-icon-tiles</div>
+                <div class="author-name">Author: #author-link-flaticon-tiles# </div>
+            </div>
+
+    </section>
+
+    <div id="footer">
+        <div>Generated by <a href="https://www.flaticon.com">flaticon.com</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+$flaticon_willbuild-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon_willbuild-font;
+    src: url("../fonts/flaticon.woff2?6e196479991753c48f3c7822b630c0fa") format("woff2"),
+url("../fonts/flaticon.woff?6e196479991753c48f3c7822b630c0fa") format("woff"),
+url("../fonts/flaticon.eot?6e196479991753c48f3c7822b630c0fa#iefix") format("embedded-opentype"),
+url("../fonts/flaticon.ttf?6e196479991753c48f3c7822b630c0fa") format("truetype"),
+url("../fonts/flaticon.svg?6e196479991753c48f3c7822b630c0fa#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_willbuild-map: (
+    "plus": "\f101",
+    "tick": "\f102",
+    "compass-1": "\f103",
+    "drawing-tool": "\f104",
+    "rulers": "\f105",
+    "pdf-file-format-symbol": "\f106",
+    "download": "\f107",
+    "quote": "\f108",
+    "arrow-right": "\f109",
+    "wallet-1": "\f10a",
+    "wallet": "\f10b",
+    "clock": "\f10c",
+    "calendar": "\f10d",
+    "star-1": "\f10e",
+    "star": "\f10f",
+    "up-right-arrow": "\f110",
+    "apartment": "\f111",
+    "modern-house": "\f112",
+    "office": "\f113",
+    "factory": "\f114",
+    "direct-mail": "\f115",
+    "envelope": "\f116",
+    "maps-and-flags": "\f117",
+    "call": "\f118",
+    "shopping-cart": "\f119",
+    "loupe": "\f11a",
+    "buildings": "\f11b",
+    "design": "\f11c",
+    "tripod": "\f11d",
+    "mapping": "\f11e",
+    "quality": "\f11f",
+    "trophy": "\f120",
+    "highway": "\f121",
+    "helmet-1": "\f122",
+    "construction-worker": "\f123",
+    "road-roller": "\f124",
+    "floor": "\f125",
+    "excavator": "\f126",
+    "architecture": "\f127",
+    "brickwall": "\f128",
+    "hook": "\f129",
+    "construction-1": "\f12a",
+    "barrier-2": "\f12b",
+    "level-1": "\f12c",
+    "construction": "\f12d",
+    "wheelbarrow": "\f12e",
+    "level": "\f12f",
+    "measuring-tape": "\f130",
+    "shovel": "\f131",
+    "trowel": "\f132",
+    "helmet": "\f133",
+    "oil-pump": "\f134",
+    "jackhammer": "\f135",
+    "vest": "\f136",
+    "driller": "\f137",
+    "bulldozer": "\f138",
+    "crane-2": "\f139",
+    "crane-1": "\f13a",
+    "crane": "\f13b",
+    "dumper": "\f13c",
+    "maze": "\f13d",
+    "cone": "\f13e",
+    "caliper": "\f13f",
+    "compass": "\f140",
+    "barrier-1": "\f141",
+    "circular-saw": "\f142",
+    "barrier": "\f143",
+    "safety-glasses": "\f144",
+    "hammer": "\f145",
+    "material": "\f146",
+    "wall": "\f147",
+    "metre": "\f148",
+    "tiles": "\f149",
+);
+
+.flaticon-plus:before {
+    content: map-get($flaticon_willbuild-map, "plus");
+}
+.flaticon-tick:before {
+    content: map-get($flaticon_willbuild-map, "tick");
+}
+.flaticon-compass-1:before {
+    content: map-get($flaticon_willbuild-map, "compass-1");
+}
+.flaticon-drawing-tool:before {
+    content: map-get($flaticon_willbuild-map, "drawing-tool");
+}
+.flaticon-rulers:before {
+    content: map-get($flaticon_willbuild-map, "rulers");
+}
+.flaticon-pdf-file-format-symbol:before {
+    content: map-get($flaticon_willbuild-map, "pdf-file-format-symbol");
+}
+.flaticon-download:before {
+    content: map-get($flaticon_willbuild-map, "download");
+}
+.flaticon-quote:before {
+    content: map-get($flaticon_willbuild-map, "quote");
+}
+.flaticon-arrow-right:before {
+    content: map-get($flaticon_willbuild-map, "arrow-right");
+}
+.flaticon-wallet-1:before {
+    content: map-get($flaticon_willbuild-map, "wallet-1");
+}
+.flaticon-wallet:before {
+    content: map-get($flaticon_willbuild-map, "wallet");
+}
+.flaticon-clock:before {
+    content: map-get($flaticon_willbuild-map, "clock");
+}
+.flaticon-calendar:before {
+    content: map-get($flaticon_willbuild-map, "calendar");
+}
+.flaticon-star-1:before {
+    content: map-get($flaticon_willbuild-map, "star-1");
+}
+.flaticon-star:before {
+    content: map-get($flaticon_willbuild-map, "star");
+}
+.flaticon-up-right-arrow:before {
+    content: map-get($flaticon_willbuild-map, "up-right-arrow");
+}
+.flaticon-apartment:before {
+    content: map-get($flaticon_willbuild-map, "apartment");
+}
+.flaticon-modern-house:before {
+    content: map-get($flaticon_willbuild-map, "modern-house");
+}
+.flaticon-office:before {
+    content: map-get($flaticon_willbuild-map, "office");
+}
+.flaticon-factory:before {
+    content: map-get($flaticon_willbuild-map, "factory");
+}
+.flaticon-direct-mail:before {
+    content: map-get($flaticon_willbuild-map, "direct-mail");
+}
+.flaticon-envelope:before {
+    content: map-get($flaticon_willbuild-map, "envelope");
+}
+.flaticon-maps-and-flags:before {
+    content: map-get($flaticon_willbuild-map, "maps-and-flags");
+}
+.flaticon-call:before {
+    content: map-get($flaticon_willbuild-map, "call");
+}
+.flaticon-shopping-cart:before {
+    content: map-get($flaticon_willbuild-map, "shopping-cart");
+}
+.flaticon-loupe:before {
+    content: map-get($flaticon_willbuild-map, "loupe");
+}
+.flaticon-buildings:before {
+    content: map-get($flaticon_willbuild-map, "buildings");
+}
+.flaticon-design:before {
+    content: map-get($flaticon_willbuild-map, "design");
+}
+.flaticon-tripod:before {
+    content: map-get($flaticon_willbuild-map, "tripod");
+}
+.flaticon-mapping:before {
+    content: map-get($flaticon_willbuild-map, "mapping");
+}
+.flaticon-quality:before {
+    content: map-get($flaticon_willbuild-map, "quality");
+}
+.flaticon-trophy:before {
+    content: map-get($flaticon_willbuild-map, "trophy");
+}
+.flaticon-highway:before {
+    content: map-get($flaticon_willbuild-map, "highway");
+}
+.flaticon-helmet-1:before {
+    content: map-get($flaticon_willbuild-map, "helmet-1");
+}
+.flaticon-construction-worker:before {
+    content: map-get($flaticon_willbuild-map, "construction-worker");
+}
+.flaticon-road-roller:before {
+    content: map-get($flaticon_willbuild-map, "road-roller");
+}
+.flaticon-floor:before {
+    content: map-get($flaticon_willbuild-map, "floor");
+}
+.flaticon-excavator:before {
+    content: map-get($flaticon_willbuild-map, "excavator");
+}
+.flaticon-architecture:before {
+    content: map-get($flaticon_willbuild-map, "architecture");
+}
+.flaticon-brickwall:before {
+    content: map-get($flaticon_willbuild-map, "brickwall");
+}
+.flaticon-hook:before {
+    content: map-get($flaticon_willbuild-map, "hook");
+}
+.flaticon-construction-1:before {
+    content: map-get($flaticon_willbuild-map, "construction-1");
+}
+.flaticon-barrier-2:before {
+    content: map-get($flaticon_willbuild-map, "barrier-2");
+}
+.flaticon-level-1:before {
+    content: map-get($flaticon_willbuild-map, "level-1");
+}
+.flaticon-construction:before {
+    content: map-get($flaticon_willbuild-map, "construction");
+}
+.flaticon-wheelbarrow:before {
+    content: map-get($flaticon_willbuild-map, "wheelbarrow");
+}
+.flaticon-level:before {
+    content: map-get($flaticon_willbuild-map, "level");
+}
+.flaticon-measuring-tape:before {
+    content: map-get($flaticon_willbuild-map, "measuring-tape");
+}
+.flaticon-shovel:before {
+    content: map-get($flaticon_willbuild-map, "shovel");
+}
+.flaticon-trowel:before {
+    content: map-get($flaticon_willbuild-map, "trowel");
+}
+.flaticon-helmet:before {
+    content: map-get($flaticon_willbuild-map, "helmet");
+}
+.flaticon-oil-pump:before {
+    content: map-get($flaticon_willbuild-map, "oil-pump");
+}
+.flaticon-jackhammer:before {
+    content: map-get($flaticon_willbuild-map, "jackhammer");
+}
+.flaticon-vest:before {
+    content: map-get($flaticon_willbuild-map, "vest");
+}
+.flaticon-driller:before {
+    content: map-get($flaticon_willbuild-map, "driller");
+}
+.flaticon-bulldozer:before {
+    content: map-get($flaticon_willbuild-map, "bulldozer");
+}
+.flaticon-crane-2:before {
+    content: map-get($flaticon_willbuild-map, "crane-2");
+}
+.flaticon-crane-1:before {
+    content: map-get($flaticon_willbuild-map, "crane-1");
+}
+.flaticon-crane:before {
+    content: map-get($flaticon_willbuild-map, "crane");
+}
+.flaticon-dumper:before {
+    content: map-get($flaticon_willbuild-map, "dumper");
+}
+.flaticon-maze:before {
+    content: map-get($flaticon_willbuild-map, "maze");
+}
+.flaticon-cone:before {
+    content: map-get($flaticon_willbuild-map, "cone");
+}
+.flaticon-caliper:before {
+    content: map-get($flaticon_willbuild-map, "caliper");
+}
+.flaticon-compass:before {
+    content: map-get($flaticon_willbuild-map, "compass");
+}
+.flaticon-barrier-1:before {
+    content: map-get($flaticon_willbuild-map, "barrier-1");
+}
+.flaticon-circular-saw:before {
+    content: map-get($flaticon_willbuild-map, "circular-saw");
+}
+.flaticon-barrier:before {
+    content: map-get($flaticon_willbuild-map, "barrier");
+}
+.flaticon-safety-glasses:before {
+    content: map-get($flaticon_willbuild-map, "safety-glasses");
+}
+.flaticon-hammer:before {
+    content: map-get($flaticon_willbuild-map, "hammer");
+}
+.flaticon-material:before {
+    content: map-get($flaticon_willbuild-map, "material");
+}
+.flaticon-wall:before {
+    content: map-get($flaticon_willbuild-map, "wall");
+}
+.flaticon-metre:before {
+    content: map-get($flaticon_willbuild-map, "metre");
+}
+.flaticon-tiles:before {
+    content: map-get($flaticon_willbuild-map, "tiles");
+}
