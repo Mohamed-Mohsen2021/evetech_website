@@ -55,7 +55,7 @@ $email_fields = array(
 /* Google reCAPTCHA Settings                                                  */
 /* Get your keys from: https://www.google.com/recaptcha/admin                 */
 /* ========================================================================== */
-$recaptcha_secret_key = "6LfOg04sAAAAAAXj_LIgcR6RQt1Xzp0lTgKW_dRD"; // TODO: Replace with your reCAPTCHA secret key
+$recaptcha_secret_key = "6LeHhE4sAAAAANPYaKwkh3sCnGrprW7_KToJQl5R"; // TODO: Replace with your reCAPTCHA secret key
 
 /* ========================================================================== */
 
