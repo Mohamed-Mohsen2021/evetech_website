@@ -553,6 +553,17 @@
          $('.contact-form button.pbmit-btn span').show();
          $(".contact-form button.pbmit-btn").removeAttr("disabled");
          $(".contact-form .message-status").html(cevap);
+         
+         // If success, reset form after 2 seconds
+         if(cevap.indexOf('alert-success') > -1) {
+           setTimeout(function() {
+             $('#contact-form')[0].reset();
+             // Reset reCAPTCHA if exists
+             if(typeof grecaptcha !== 'undefined') {
+               grecaptcha.reset();
+             }
+           }, 2000);
+         }
        }
      });
      

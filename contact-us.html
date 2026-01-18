@@ -35,6 +35,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Responsive CSS -->
 	<link rel="stylesheet" href="css/responsive.css">
+	<!-- Google reCAPTCHA -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -170,7 +172,10 @@
 										<div class="pbmit-ihbox-box d-flex align-items-center">
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">Call us now</h2>		
-												<div class="pbmit-heading-desc">Talk to us and see how we can work<br>together 1-888-452-1505</div>			
+												<div class="pbmit-heading-desc">Talk to us and see how we can work<br><a href="tel:01065545543">
+													<span class="pbmit-header-button-text-1">01065545543</span>
+												</a></div>
+
 											</div>
 										</div>
 									</div>
@@ -178,7 +183,7 @@
 										<div class="pbmit-ihbox-box d-flex align-items-center">
 											<div class="pbmit-ihbox-contents">
 												<h2 class="pbmit-element-title">Your Message</h2>		
-												<div class="pbmit-heading-desc">We’re usually replying within 24 hours<br>info@eve-tech.net </div>
+												<div class="pbmit-heading-desc">We’re usually replying within 24 hours<br>Shereen-samy@eve-tech.net</div>
 											</div>
 										</div>
 									</div>
@@ -206,7 +211,7 @@
 												<input type="email" class="form-control" placeholder="Email" name="email" required>
 											</div>
 											<div class="col-sm-6">
-												<input type="tel" class="form-control" placeholder="Phone" name="phone" required>
+												<input type="tel" class="form-control" placeholder="Phone" name="number" required>
 											</div>
 											<div class="col-sm-6">
 												<input type="text" class="form-control" placeholder="Subject" name="subject" required>
@@ -217,10 +222,14 @@
 											<div class="col-md-12">
 												<div class="form-check">
 													<label class="form-check-label">
-														<input class="form-check-input" type="checkbox">
-														I agree with your tearms and condistion tempor aliqua.
+														<input class="form-check-input" type="checkbox" required>
+														I agree with your terms and conditions.
 													</label>
 												</div>
+											</div>
+											<div class="col-md-12 mb-3">
+												<!-- Replace YOUR_SITE_KEY with your actual reCAPTCHA site key -->
+												<div class="g-recaptcha" data-sitekey="6LfOg04sAAAAAJd5aSx5AzYY30q6pH_9c8t1xzGx"></div>
 											</div>
 											<div class="col-md-12">
 												<button class="pbmit-btn">

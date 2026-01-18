@@ -9,13 +9,19 @@
 /* Make sure you done Gmail Account (or your server email account details)    */
 /* changes as described here: https://mailtrap.io/blog/phpmailer-gmail/       */
 
-$from_email				= $_POST['email'];
-$from_email_password	= $_POST['password'];
-$from_email_name		= $_POST['name'];
-$to_email				= "enoeno717@gmail.com";
-$to_email_name			= "HR";
-$email_subject			= $_POST['subject'];
-$email_message          = $_POST["message"];
+// SMTP Server Credentials (use App Password for Gmail)
+$smtp_username          = "info@eve-tech.net";      // TODO: Change to your Gmail address
+$smtp_password          = "Info@2026#";         // TODO: Change to your Gmail App Password
+
+// Email recipient settings
+$to_email               = "shereen-samy@eve-tech.net";
+$to_email_name          = "EveTech Team";
+
+// Form data from user
+$from_email             = isset($_POST['email']) ? $_POST['email'] : '';
+$from_email_name        = isset($_POST['name']) ? $_POST['name'] : '';
+$email_subject          = isset($_POST['subject']) ? $_POST['subject'] : 'Contact Form Submission';
+$email_message          = isset($_POST['message']) ? $_POST['message'] : '';
 /* ========================================================================== */
 
 /* ========================================================================== */
@@ -44,6 +50,12 @@ $required_fields = array(
 $email_fields = array(
 	'email'
 );
+
+/* ========================================================================== */
+/* Google reCAPTCHA Settings                                                  */
+/* Get your keys from: https://www.google.com/recaptcha/admin                 */
+/* ========================================================================== */
+$recaptcha_secret_key = "6LfOg04sAAAAAAXj_LIgcR6RQt1Xzp0lTgKW_dRD"; // TODO: Replace with your reCAPTCHA secret key
 
 /* ========================================================================== */
 
@@ -100,6 +112,39 @@ $email_status_message = '';
 
 if( !empty($_POST) ){
 
+	// Verify reCAPTCHA
+	$recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+	
+	if(empty($recaptcha_response)) {
+		echo '<div class="alert alert-danger" role="alert">Please complete the reCAPTCHA verification.</div>';
+		die();
+	}
+	
+	// Verify with Google
+	$verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+	$verify_data = array(
+		'secret' => $recaptcha_secret_key,
+		'response' => $recaptcha_response,
+		'remoteip' => $_SERVER['REMOTE_ADDR']
+	);
+	
+	$options = array(
+		'http' => array(
+			'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+			'method'  => 'POST',
+			'content' => http_build_query($verify_data)
+		)
+	);
+	
+	$context  = stream_context_create($options);
+	$verify_response = file_get_contents($verify_url, false, $context);
+	$response_data = json_decode($verify_response);
+	
+	if(!$response_data->success) {
+		echo '<div class="alert alert-danger" role="alert">reCAPTCHA verification failed. Please try again.</div>';
+		die();
+	}
+
 	// check if all required fields are not empty
 	$error_message = '';
 
@@ -141,49 +186,85 @@ if( !empty($_POST) ){
 
 		/**** Trying to send email ****/
 
-		//Create a new PHPMailer instance
-		$mail = new PHPMailer(true);
-		//Tell PHPMailer to use SMTP
-		$mail->isSMTP();
-		//Enable SMTP debugging
-		//SMTP::DEBUG_OFF = off (for production use)
-		//SMTP::DEBUG_CLIENT = client messages
-		//SMTP::DEBUG_SERVER = client and server messages
-		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-		$mail->SMTPDebug = SMTP::DEBUG_OFF;
+		try {
+			//Create a new PHPMailer instance
+			$mail = new PHPMailer(true);
+			//Tell PHPMailer to use SMTP
+			$mail->isSMTP();
+			//Enable SMTP debugging
+			//SMTP::DEBUG_OFF = off (for production use)
+			//SMTP::DEBUG_CLIENT = client messages
+			//SMTP::DEBUG_SERVER = client and server messages
+			//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+			$mail->SMTPDebug = SMTP::DEBUG_OFF;
 
-		//Set the hostname of the mail server
-		$mail->Host = 'smtp.gmail.com';
-		//Set the SMTP port number - likely to be 25, 465 or 587
-		$mail->Port = 587;
-		//We don't need to set this as it's the default value
-		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "tls";
-		$mail->Username   = $from_email;
-		$mail->Password   = $from_email_password; // Please see here: https://mailtrap.io/blog/phpmailer-gmail/
-		//Set who the message is to be sent from
-		$mail->setFrom( $from_email, $from_email_name);
-		//Set an alternative reply-to address
-		$mail->addReplyTo($from_email, $from_email_name);
-		//Set who the message is to be sent to
-		$mail->addAddress( $to_email, $to_email_name);
-		//Set the subject line
-		$mail->Subject = $email_subject;
-		//Read an HTML message body from an external file, convert referenced images to embedded,
-		//convert HTML into a basic plain-text alternative body
-		$mail->msgHTML( $email_body );
-		//Replace the plain text body with one created manually
-		//$mail->AltBody = 'This is a plain-text message body';
+			//Set the hostname of the mail server
+			$mail->Host = 'premium294.web-hosting.com';
+			//Set the SMTP port number - 465 for SSL, 587 for TLS
+			$mail->Port = 587;
+			$mail->SMTPAuth = true;
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // TLS encryption
+			$mail->Username   = $smtp_username;
+			$mail->Password   = $smtp_password;
+			//Set who the message is to be sent from
+			$mail->setFrom( $smtp_username, 'EveTech Contact Form');
+			//Set an alternative reply-to address
+			$mail->addReplyTo($from_email, $from_email_name);
+			//Set who the message is to be sent to
+			$mail->addAddress( $to_email, $to_email_name);
+			//Set the subject line
+			$mail->Subject = $email_subject;
+			//Read an HTML message body from an external file, convert referenced images to embedded,
+			//convert HTML into a basic plain-text alternative body
+			$mail->msgHTML( $email_body );
 
-		if ( $mail->send() ) {
-			echo '<div class="alert alert-success" role="alert">Thank for filling the form. <br> Our team will contact you soon !!! </div>';
+			if ( $mail->send() ) {
+				
+				// Send auto-reply confirmation email to user
+				try {
+					$autoReply = new PHPMailer(true);
+					$autoReply->isSMTP();
+					$autoReply->SMTPDebug = SMTP::DEBUG_OFF;
+					$autoReply->Host = 'premium294.web-hosting.com';
+					$autoReply->Port = 587;
+					$autoReply->SMTPAuth = true;
+					$autoReply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+					$autoReply->Username = $smtp_username;
+					$autoReply->Password = $smtp_password;
+					$autoReply->setFrom($smtp_username, 'EveTech');
+					$autoReply->addAddress($from_email, $from_email_name);
+					$autoReply->Subject = 'Thank you for contacting EveTech';
+					
+					$autoReplyBody = '
+					<html>
+					<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+						<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+							<h2 style="color: #363533;">Thank You for Contacting Us!</h2>
+							<p>Dear ' . htmlspecialchars($from_email_name) . ',</p>
+							<p>Thank you for reaching out to EveTech. We have received your message and our team will get back to you as soon as possible.</p>
+							<p>We typically respond within 24-48 business hours.</p>
+							<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+							<p style="color: #666; font-size: 14px;">Best regards,<br><strong>EveTech Team</strong></p>
+						</div>
+					</body>
+					</html>';
+					
+					$autoReply->msgHTML($autoReplyBody);
+					$autoReply->send();
+				} catch (Exception $e) {
+					// Auto-reply failed, but main email was sent - continue silently
+				}
+				
+				echo '<div class="alert alert-success" role="alert">Thank for filling the form. <br> Our team will contact you soon !!! </div>';
+				
+			} else {
+				echo '<div class="alert alert-danger" role="alert">Error: Cannot send email. Please try again later.</div>';
+			}
 			
-			// save your message in the 'Sent Mail' folder.
-			// save_mail($mail);
-			
-		} else {
-			echo '<div class="alert alert-danger" role="alert">Error.. caannot send email: <br> ' . $mail->ErrorInfo . ' </div>';
-			
+		} catch (Exception $e) {
+			echo '<div class="alert alert-danger" role="alert">Error: Could not send email. Please contact us directly at info@eve-tech.net</div>';
+			// Debug info:
+			echo '<br><small style="color:#999;">Debug: ' . $e->getMessage() . '</small>';
 		}
 
 	}
