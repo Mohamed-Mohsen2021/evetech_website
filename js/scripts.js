@@ -531,10 +531,11 @@
      Send email via Ajax
    Make sure you configure send.php file 
      -------------------------------------*/
-    $("#contact-form").submit(function(){
+    $("#contact-form").submit(function(e){
+      e.preventDefault(); // Prevent page redirect
  
    if( $("#contact-form .doing-via-ajax").length == 0 ){
-     $("#contact-form").prepend('<input class="doing-via-ajax" type="hidden" name="doing-via-ajax" value="yes" />');;
+     $("#contact-form").prepend('<input class="doing-via-ajax" type="hidden" name="doing-via-ajax" value="yes" />');
    }
  
    if( $("#contact-form").valid() ){  // check if form is valid
@@ -554,7 +555,12 @@
          $(".contact-form button.pbmit-btn").removeAttr("disabled");
          $(".contact-form .message-status").html(cevap);
          
-         // If success, reset form after 2 seconds
+         // Scroll to message
+         $('html, body').animate({
+           scrollTop: $(".message-status").offset().top - 100
+         }, 500);
+         
+         // If success, reset form after 3 seconds
          if(cevap.indexOf('alert-success') > -1) {
            setTimeout(function() {
              $('#contact-form')[0].reset();
@@ -562,8 +568,18 @@
              if(typeof grecaptcha !== 'undefined') {
                grecaptcha.reset();
              }
+             // Clear success message after 5 seconds
+             setTimeout(function() {
+               $(".contact-form .message-status").fadeOut();
+             }, 3000);
            }, 2000);
          }
+       },
+       error: function() {
+         $('.form-btn-loader').addClass('d-none');
+         $('.contact-form button.pbmit-btn span').show();
+         $(".contact-form button.pbmit-btn").removeAttr("disabled");
+         $(".contact-form .message-status").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
        }
      });
      
