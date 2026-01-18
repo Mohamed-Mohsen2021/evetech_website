@@ -519,75 +519,83 @@
 
 })($);
 
-   /*-------------------------------------
-    Contact form validator
-    -------------------------------------*/
-    if ( $.isFunction($.fn.validate) ) {
-      $("#contact-form").validate(); 
-    }
+	 /*-------------------------------------
+		Contact form (AJAX, no redirect)
+		-------------------------------------*/
+	 (function () {
+		 if (!window.jQuery) return;
+		 var $ = window.jQuery;
 
+		 $(function () {
+			 var $form = $("#contact-form");
+			 if (!$form.length) return;
 
-    /*-------------------------------------
-     Send email via Ajax
-   Make sure you configure send.php file 
-     -------------------------------------*/
-    $("#contact-form").submit(function(e){
-      e.preventDefault(); // Prevent page redirect
- 
-   if( $("#contact-form .doing-via-ajax").length == 0 ){
-     $("#contact-form").prepend('<input class="doing-via-ajax" type="hidden" name="doing-via-ajax" value="yes" />');
-   }
- 
-   if( $("#contact-form").valid() ){  // check if form is valid
- 
-     $(".contact-form .message-status").html('');
-     $('.form-btn-loader').removeClass('d-none');
-     $('.contact-form button.pbmit-btn span').hide();
-     $('.contact-form button.pbmit-btn').attr("disabled", "disabled");
- 
-     $.ajax( {
-       type: "POST",
-       url: "send.php",
-       data:$('#contact-form').serialize(),
-       success: function(cevap) {
-         $('.form-btn-loader').addClass('d-none');
-         $('.contact-form button.pbmit-btn span').show();
-         $(".contact-form button.pbmit-btn").removeAttr("disabled");
-         $(".contact-form .message-status").html(cevap);
-         
-         // Scroll to message
-         $('html, body').animate({
-           scrollTop: $(".message-status").offset().top - 100
-         }, 500);
-         
-         // If success, reset form after 3 seconds
-         if(cevap.indexOf('alert-success') > -1) {
-           setTimeout(function() {
-             $('#contact-form')[0].reset();
-             // Reset reCAPTCHA if exists
-             if(typeof grecaptcha !== 'undefined') {
-               grecaptcha.reset();
-             }
-             // Clear success message after 5 seconds
-             setTimeout(function() {
-               $(".contact-form .message-status").fadeOut();
-             }, 3000);
-           }, 2000);
-         }
-       },
-       error: function() {
-         $('.form-btn-loader').addClass('d-none');
-         $('.contact-form button.pbmit-btn span').show();
-         $(".contact-form button.pbmit-btn").removeAttr("disabled");
-         $(".contact-form .message-status").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
-       }
-     });
-     
-   }
- 
-   return false;
- 
-   });
+			 function sendContactFormAjax() {
+				 if ($form.find(".doing-via-ajax").length === 0) {
+					 $form.prepend('<input class="doing-via-ajax" type="hidden" name="doing-via-ajax" value="yes" />');
+				 }
+
+				 $(".contact-form .message-status").show().html('');
+				 $('.form-btn-loader').removeClass('d-none');
+				 $('.contact-form button.pbmit-btn span').hide();
+				 $('.contact-form button.pbmit-btn').attr("disabled", "disabled");
+
+				 $.ajax({
+					 type: "POST",
+					 url: "send.php",
+					 data: $form.serialize(),
+					 success: function (cevap) {
+						 $('.form-btn-loader').addClass('d-none');
+						 $('.contact-form button.pbmit-btn span').show();
+						 $(".contact-form button.pbmit-btn").removeAttr("disabled");
+						 $(".contact-form .message-status").show().html(cevap);
+
+						 if ($(".message-status").length) {
+							 $('html, body').animate({
+								 scrollTop: $(".message-status").offset().top - 100
+							 }, 500);
+						 }
+
+						 if (typeof cevap === 'string' && cevap.indexOf('alert-success') > -1) {
+							 setTimeout(function () {
+								 if ($form[0]) $form[0].reset();
+								 if (typeof grecaptcha !== 'undefined') {
+									 try { grecaptcha.reset(); } catch (e) {}
+								 }
+							 }, 2000);
+						 }
+					 },
+					 error: function () {
+						 $('.form-btn-loader').addClass('d-none');
+						 $('.contact-form button.pbmit-btn span').show();
+						 $(".contact-form button.pbmit-btn").removeAttr("disabled");
+						 $(".contact-form .message-status").show().html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+					 }
+				 });
+			 }
+
+			 // Prefer jQuery Validate submitHandler to prevent native submit reliably
+			 if ($.isFunction($.fn.validate)) {
+				 $form.validate({
+					 submitHandler: function (formEl, event) {
+						 if (event && event.preventDefault) event.preventDefault();
+						 sendContactFormAjax();
+						 return false;
+					 }
+				 });
+			 }
+
+			 // Fallback: always prevent default submit and use AJAX
+			 $form.off('submit.pbmitContact').on('submit.pbmitContact', function (e) {
+				 e.preventDefault();
+				 if ($.isFunction($form.valid) && !$form.valid()) {
+					 return false;
+				 }
+				 sendContactFormAjax();
+				 return false;
+			 });
+		 });
+	 })();
 
     /*-------------------------------------
     Twentytwenty
